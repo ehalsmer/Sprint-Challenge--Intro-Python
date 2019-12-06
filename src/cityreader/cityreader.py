@@ -34,11 +34,9 @@ def cityreader(cities=[]):
     citiesFile = open('cities.csv')
     citiesReader = csv.reader(citiesFile)
     citiesData = list(citiesReader)
-    # print('number of rows: ', len(citiesData))
+    citiesFile.close()
     for i in range(1,61):
         cities.append(City(citiesData[i][0], float(citiesData[i][3]), float(citiesData[i][4])))
-    # print(cities)
-    citiesFile.close()
     return cities
 
 cityreader(cities)

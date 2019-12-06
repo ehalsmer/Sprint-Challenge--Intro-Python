@@ -19,8 +19,6 @@
 # Put a comment noting which class is the base class
 
 # Base class is Vehicle:
-# The first two classes I've provided extra definitions as examples, the rest I'll use 'pass' in the body
-
 class Vehicle:
     pass
 
