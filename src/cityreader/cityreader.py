@@ -8,9 +8,9 @@ class City:
         self.lat = lat
         self.lon = lon
     def __str__(self):
-        return f"City: {self.name}"
+        return f'City("{self.name}", {self.lat},{self.lon})'
     def __repr__(self):
-        return f"City({repr(self.name, self.lat, self.lon)})"
+        return f'City("{self.name}", {self.lat},{self.lon})'
 
 
 # We have a collection of US cities with population over 750,000 stored in the
@@ -36,7 +36,9 @@ def cityreader(cities=[]):
     citiesData = list(citiesReader)
     # print('number of rows: ', len(citiesData))
     for i in range(1,61):
-        print(citiesData[i][0])
+        cities.append(City(citiesData[i][0], float(citiesData[i][3]), float(citiesData[i][4])))
+    # print(cities)
+    citiesFile.close()
     return cities
 
 cityreader(cities)
